@@ -7,13 +7,13 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.time.StopWatch;
 
-import com.lewismsparlin.benchmarks.BasicMathBenchmark;
+import com.lewismsparlin.benchmarks.SummingEvenNumbersBenchmark;
 import com.lewismsparlin.benchmarks.ObjectTransformationBenchmark;
 
 public class StreamBenchmarkRunner {
 
 	static final List<Class<? extends StreamBenchmark>> benchmarks = Arrays.asList(
-			BasicMathBenchmark.class,
+			SummingEvenNumbersBenchmark.class,
 			ObjectTransformationBenchmark.class);
 
 	public static void main(String[] args) {

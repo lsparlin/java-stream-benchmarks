@@ -6,7 +6,7 @@ import java.util.stream.LongStream;
 
 import com.lewismsparlin.StreamBenchmark;
 
-public class BasicMathBenchmark implements StreamBenchmark {
+public class SummingEvenNumbersBenchmark implements StreamBenchmark {
 	
 	private static final List<Long> range = LongStream.rangeClosed(0, 1000000).boxed().collect(Collectors.toList());
 
