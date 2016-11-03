@@ -1,6 +1,7 @@
 package com.lewismsparlin.benchmarks;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
@@ -26,7 +27,8 @@ public class SummingEvenNumbersBenchmark implements StreamBenchmark {
 	public void performFunctionalBenchmark() {
 		long sum = range.stream()
 				.filter(num -> num % 2 == 0)
-				.reduce(0L, Long::sum);
+				.mapToLong(Long::longValue)
+				.sum();
 		System.out.println("FUNCTIONAL sum is " + sum);
 	}
 
