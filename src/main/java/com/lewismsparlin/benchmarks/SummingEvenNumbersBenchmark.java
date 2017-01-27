@@ -7,8 +7,10 @@ import java.util.stream.LongStream;
 import com.lewismsparlin.StreamBenchmark;
 
 public class SummingEvenNumbersBenchmark implements StreamBenchmark {
-	
-	private static final List<Long> range = LongStream.rangeClosed(0, 2000000).boxed().collect(Collectors.toList());
+
+	private static final int ITERATIONS = 2000000;
+
+	private static final List<Long> range = LongStream.rangeClosed(0, ITERATIONS).boxed().collect(Collectors.toList());
 
 	@Override
 	public void performImperativeBenchmark() {
@@ -18,8 +20,8 @@ public class SummingEvenNumbersBenchmark implements StreamBenchmark {
 				sum += num;
 			}
 		}
-		System.out.println("IMPERITIVE sum is " + sum);
-		
+		System.out.println("IMPERITIVE sum of " + ITERATIONS / 2 + " even numbers is " + sum);
+
 	}
 
 	@Override
@@ -28,7 +30,7 @@ public class SummingEvenNumbersBenchmark implements StreamBenchmark {
 				.filter(num -> num % 2 == 0)
 				.mapToLong(Long::longValue)
 				.sum();
-		System.out.println("FUNCTIONAL sum is " + sum);
+		System.out.println("FUNCTIONAL sum of " + ITERATIONS / 2 + " even numbers is " + sum);
 	}
 
 }

@@ -10,7 +10,9 @@ import com.lewismsparlin.model.MyObj;
 
 public class ObjectTransformationBenchmark implements StreamBenchmark {
 
-	private static final List<Long> numbers = LongStream.range(0, 100000).boxed().collect(Collectors.toList());
+	private static final int ITERATIONS = 100000;
+
+	private static final List<Long> numbers = LongStream.range(0, ITERATIONS).boxed().collect(Collectors.toList());
 
 	@Override
 	public void performImperativeBenchmark() {
@@ -22,6 +24,7 @@ public class ObjectTransformationBenchmark implements StreamBenchmark {
 			objects.add(obj);
 		}
 
+		System.out.println("transformed " + ITERATIONS + " numbers into objects: IMPERATIVE");
 	}
 
 	@Override
@@ -30,6 +33,8 @@ public class ObjectTransformationBenchmark implements StreamBenchmark {
 		List<MyObj> list = numbers.stream()
 				.map(ObjectTransformationBenchmark::numberToMyObj)
 				.collect(Collectors.toList());
+
+		System.out.println("transformed " + ITERATIONS + " numbers into objects: FUNCTIONAL");
 	}
 
 	private static MyObj numberToMyObj(Long number) {
