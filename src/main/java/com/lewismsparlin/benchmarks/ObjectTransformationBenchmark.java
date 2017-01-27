@@ -6,16 +6,11 @@ import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
 import com.lewismsparlin.StreamBenchmark;
+import com.lewismsparlin.model.MyObj;
 
 public class ObjectTransformationBenchmark implements StreamBenchmark {
 
 	private static final List<Long> numbers = LongStream.range(0, 100000).boxed().collect(Collectors.toList());
-
-	private static class MyObj {
-		public String name;
-
-		public long someNumber;
-	}
 
 	@Override
 	public void performImperativeBenchmark() {
