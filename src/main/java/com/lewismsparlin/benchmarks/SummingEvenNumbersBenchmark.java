@@ -8,7 +8,7 @@ import com.lewismsparlin.StreamBenchmark;
 
 public class SummingEvenNumbersBenchmark implements StreamBenchmark {
 	
-	private static final List<Long> range = LongStream.rangeClosed(0, 1000000).boxed().collect(Collectors.toList());
+	private static final List<Long> range = LongStream.rangeClosed(0, 2000000).boxed().collect(Collectors.toList());
 
 	@Override
 	public void performImperativeBenchmark() {

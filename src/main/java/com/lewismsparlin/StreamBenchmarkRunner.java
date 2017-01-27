@@ -31,15 +31,15 @@ public class StreamBenchmarkRunner {
 					
 					StopWatch fStopwatch = StopWatch.createStarted();
 					benchmark.performFunctionalBenchmark();
-					System.out.println(name + " FUNCTIONAL benchmark completd in " + fStopwatch.getTime(TimeUnit.MILLISECONDS));
+					System.out.println(name + " FUNCTIONAL benchmark completed in " + fStopwatch.getTime(TimeUnit.MILLISECONDS) + " ms");
 					fStopwatch.stop();
 					
 					StopWatch iStopwatch = StopWatch.createStarted();
 					benchmark.performImperativeBenchmark();
-					System.out.println(name + " IMPERITIVE benchmark completed in " + iStopwatch.getTime(TimeUnit.MILLISECONDS));
+					System.out.println(name + " IMPERITIVE benchmark completed in " + iStopwatch.getTime(TimeUnit.MILLISECONDS) + " ms");
 					iStopwatch.stop();
 					
-					System.out.println("### Completed " + name + " benchmark in " + masterStopwatch.getTime(TimeUnit.MILLISECONDS));
+					System.out.println("### Completed " + name + " benchmark in " + masterStopwatch.getTime(TimeUnit.MILLISECONDS) + " ms");
 					masterStopwatch.stop();
 				});
 

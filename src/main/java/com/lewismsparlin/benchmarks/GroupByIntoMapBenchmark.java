@@ -23,7 +23,7 @@ public class GroupByIntoMapBenchmark implements StreamBenchmark {
 			this.inboxCount = inboxCount;
 			this.spamCount = spamCount;
 		}
-		
+
 		public String getIsp() {
 			return this.isp;
 		}
@@ -32,7 +32,9 @@ public class GroupByIntoMapBenchmark implements StreamBenchmark {
 
 	private static final String[] isps = new String[] { "Gmail", "AOL", "Yahoo" };
 
-	private static final List<IspNumbers> ispNumbers = IntStream.range(0, 1000).mapToObj(i -> {
+	private static final int ITERATIONS = 100000;
+
+	private static final List<IspNumbers> ispNumbers = IntStream.range(0, ITERATIONS).mapToObj(i -> {
 		String isp = isps[i % 3];
 		int inboxCount = 5 - (i % 3);
 		int spamCount = 3 - (i % 3);
@@ -49,16 +51,16 @@ public class GroupByIntoMapBenchmark implements StreamBenchmark {
 			}
 			map.get(numbers.isp).add(numbers);
 		}
-		
-		System.out.println("map of size " + map.size() + "created by IMPERATIVE style");
+
+		System.out.println("IMPERITIVE grouping of " + ITERATIONS + " objects complete");
 	}
 
 	@Override
 	public void performFunctionalBenchmark() {
 		Map<String, List<IspNumbers>> map = ispNumbers.stream()
 				.collect(Collectors.groupingBy(IspNumbers::getIsp));
-				
-		System.out.println("map of size " + map.size() + "created by FUNCTIONAL style");
+
+		System.out.println("FUNCTIONAL grouping of " + ITERATIONS + " objects complete");
 	}
 
 }
