@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.lang3.time.StopWatch;
 
+import com.lewismsparlin.benchmarks.FindFirstBenchmark;
 import com.lewismsparlin.benchmarks.GroupByIntoMapBenchmark;
 import com.lewismsparlin.benchmarks.MapToPropertyBenchmark;
 import com.lewismsparlin.benchmarks.ObjectTransformationBenchmark;
@@ -16,6 +17,7 @@ public class StreamBenchmarkRunner {
 
 	static final List<Class<? extends StreamBenchmark>> benchmarks = Arrays.asList(
 			SummingEvenNumbersBenchmark.class,
+			FindFirstBenchmark.class,
 			ObjectTransformationBenchmark.class,
 			MapToPropertyBenchmark.class,
 			GroupByIntoMapBenchmark.class);
