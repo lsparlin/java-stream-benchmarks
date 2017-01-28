@@ -8,5 +8,5 @@ _No need to download [Gradle](http://gradle.org), simply running the `.gradlew` 
 
 #### OR
 
-### Run the app
+### Run the Benchmarks
 `.gradlew run`
