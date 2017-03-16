@@ -11,6 +11,7 @@ import com.lewismsparlin.benchmarks.FindFirstBenchmark;
 import com.lewismsparlin.benchmarks.GroupByIntoMapBenchmark;
 import com.lewismsparlin.benchmarks.MapToPropertyBenchmark;
 import com.lewismsparlin.benchmarks.ObjectTransformationBenchmark;
+import com.lewismsparlin.benchmarks.OptionalBenchmark;
 import com.lewismsparlin.benchmarks.SummingEvenNumbersBenchmark;
 
 public class StreamBenchmarkRunner {
@@ -20,7 +21,8 @@ public class StreamBenchmarkRunner {
 			FindFirstBenchmark.class,
 			ObjectTransformationBenchmark.class,
 			MapToPropertyBenchmark.class,
-			GroupByIntoMapBenchmark.class);
+			GroupByIntoMapBenchmark.class,
+			OptionalBenchmark.class);
 
 	public static void main(String[] args) {
 
